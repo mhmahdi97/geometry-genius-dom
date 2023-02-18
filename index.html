@@ -20,9 +20,11 @@
     <link rel="stylesheet" href="styles/custom-style.css" />
   </head>
   <body>
+    <!-- Header section area starts -->
     <header>
+      <!-- Nav area -->
       <nav
-        class="container container-fluid navbar navbar-expand-lg py-4 nav-custom"
+        class="container container-fluid navbar navbar-expand-lg py-4 mt-5 nav-custom"
       >
         <div class="ms-5">
           <h1>Interactive</h1>
@@ -32,6 +34,59 @@
         <button class="btn btn-primary ms-auto me-5 px-4">Blog</button>
       </nav>
     </header>
+    <!-- Header Section Area Ends -->
+
+    <!-- Main section area starts -->
+    <main class="mt-5 container container-fluid">
+      <!-- Geometry Area -->
+      <section class="row">
+        <div class="col-9 row gx-5">
+          <!-- Card Area Starts -->
+          <div class="cards-custom py-4 col-12 col-sm-6 col-md-4 col-lg-4">
+            <!-- image div starts -->
+            <div class="text-center mb-4">
+              <img class="img-fluid" src="images/triangle.png" alt="" />
+            </div>
+            <!-- image div ends -->
+
+            <h3 class="text-center mb-3">Triangle</h3>
+            <p class="text-center mb-3">Area (A) = 0.5×b×h</p>
+
+            <!-- inpput div starts -->
+            <div class="text-center mb-3">
+              <input
+                class="me-3 mb-2 rounded-2 w-25"
+                type="text"
+                name=""
+                id=""
+                placeholder="b"
+              />
+              <span>cm</span>
+              <input
+                class="me-3 mb-2 rounded-2 w-25"
+                type="text"
+                name=""
+                id=""
+                placeholder="h"
+              />
+              <span>cm</span>
+            </div>
+            <!-- input div ends -->
+
+            <!-- button div starts-->
+            <div class="text-center">
+              <button class="btn btn-primary py- px-5">Calculate</button>
+            </div>
+            <!-- button div ends -->
+          </div>
+          <!-- Card Area Ends -->
+        </div>
+
+        <!-- Result Calculation Area -->
+        <div class="col-3"></div>
+      </section>
+    </main>
+    <!-- Main section area ends -->
 
     <!-- Javacript files -->
     <script src="js/utilities.js"></script>

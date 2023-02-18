@@ -3,8 +3,6 @@
   font-family: "Inter", sans-serif !important;
 }
 
-/* custom common heading styles */
-
 header h1 {
   font-weight: 700 !important;
   font-size: 45px !important;
@@ -21,4 +19,10 @@ header h2 {
 .nav-custom {
   background: rgba(16, 144, 216, 0.1);
   border-radius: 8px;
+}
+
+.cards-custom {
+  background: #ffffff !important;
+  border: 1px solid rgba(17, 17, 17, 0.1) !important;
+  border-radius: 8px !important;
 }
