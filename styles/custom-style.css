@@ -1,0 +1,14 @@
+/* added custom font family */
+* {
+  font-family: "EB Garamond", serif !important;
+}
+
+/* custom common heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700 !important;
+}
