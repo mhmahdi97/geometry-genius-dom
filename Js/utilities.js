@@ -21,7 +21,20 @@ function setTextElementValueById(elementId, newValue) {
   textElement.innerText = newValue;
 }
 
-// fucntion for calculating area of triangl
+// function for inpput field validation
+function inputfieldValidation(input1, input2) {
+  if (isNaN(input1) || isNaN(input2)) {
+    alert("Please provide a valid number!!!");
+    return false;
+  } else if (input1 < 0 || input2 < 0) {
+    alert("Please provide a positive number!!!");
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// fucntion for calculating area of triangle
 function triangleArea(b, h) {
   return 0.5 * b * h;
 }
