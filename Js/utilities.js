@@ -2,18 +2,13 @@
 function getInputFieldValueById(inputFieldId) {
   const inputField = document.getElementById(inputFieldId);
   const inputFieldValueString = inputField.value;
+  if (inputFieldValueString === "" || inputFieldValueString === null) {
+    return "";
+  }
   const inputFieldValue = parseFloat(inputFieldValueString);
   inputField.value = "";
   return inputFieldValue;
 }
-
-// // function for getting text element
-// function getTextElementValueById(elementId) {
-//   const textElement = document.getElementById(elementId);
-//   const textElementValueString = textElement.innerText;
-//   const textElementValue = parseFloat(textElementValueString);
-//   return textElementValue;
-// }
 
 // function for getting text element
 function getTextElementValueById(elementId) {
@@ -22,44 +17,68 @@ function getTextElementValueById(elementId) {
   return textElementValue;
 }
 
-// function for set text element
-function setTextElementValueById(elementId, newValue) {
-  const textElement = document.getElementById(elementId);
-  textElement.innerText = newValue;
+// serial counter for result item
+let serial = 0;
+// function for set the result to the result area
+function setResult(shapeName, shapeArea) {
+  serial++;
+  const tableContainer = document.getElementById("table-container");
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>${serial}.</td>
+    <td>${shapeName} </td>
+    <td>${shapeArea}<span>cm<sup>2</sup></span></td>
+    <td><button>Convert to m<sup>2</sup></button></td>
+    `;
+  tableContainer.appendChild(tr);
 }
 
-// function for inpput field validation
-let checkValidation = true;
-function inputfieldValidation(input1, input2) {
-  if (isNaN(input1) || isNaN(input2)) {
-    alert("Please provide a valid number!!!");
-    checkValidation = false;
-    return checkValidation;
+// // function for inpput field validation
+// let checkValidation = true;
+// function inputfieldValidation(input1, input2) {
+//   if (isNaN(input1) || isNaN(input2)) {
+//     alert("Please provide a valid number!!!");
+//     checkValidation = false;
+//     return checkValidation;
+//   } else if (input1 < 0 || input2 < 0) {
+//     alert("Please provide a positive number!!!");
+//     checkValidation = false;
+//     return checkValidation;
+//   } else {
+//     return checkValidation;
+//   }
+// }
+
+// input validation
+function inputFieldValidation(input1, input2) {
+  if (input1 === "" || input2 === "") {
+    alert("Please put an input then click!!!");
+    return false;
+  } else if (isNaN(input1) || isNaN(input2)) {
+    alert("Please provide a valid number, not text!!!");
+    return false;
   } else if (input1 < 0 || input2 < 0) {
     alert("Please provide a positive number!!!");
-    checkValidation = false;
-    return checkValidation;
+    return false;
   } else {
-    return checkValidation;
+    return true;
   }
 }
 
 // fucntion for calculating area of triangle, rhombus and pentagon
 function areaCalculationWithHalf(p1, p2) {
   const area = 0.5 * p1 * p2;
-  return area.toPrecision(2);
+  return area.toFixed(2);
 }
 
 // function for calculating rectangle area of rectangle and parallelogram
 function areaCalculatinWithTwoParam(p1, p2) {
   const area = p1 * p2;
-  return area.toPrecision(2);
+  return area.toFixed(2);
 }
 
 // function for calculating ellipse area
 function ellipseAreaCalculation(a, b) {
   const area = 3.1416 * a * b;
-  return area.toPrecision(2);
+  return area.toFixed(2);
 }
-
-console.log(ellipseAreaCalculation(2.2321, 1.2321));
