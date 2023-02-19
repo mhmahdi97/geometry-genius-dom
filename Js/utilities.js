@@ -35,10 +35,20 @@ function setResult(shapeName, shapeArea) {
 
 // function for inpput field validation
 function inputFieldValidation(input1, input2) {
-  if (input1 === "" || input2 === "") {
-    alert("Please put an input then click!!!");
+  if (input1 === "" && !isNaN(input2)) {
+    alert("Please complete your input!!!");
     return false;
-  } else if (isNaN(input1) || isNaN(input2)) {
+  } else if (!isNaN(input1) && input2 === "") {
+    alert("Please complete your input!!!");
+    return false;
+  } else if (input1 === "" && input2 === "") {
+    alert("Please put your values as input then click!!!");
+    return false;
+  } else if (
+    (isNaN(input1) && !isNaN(input2)) ||
+    (!isNaN(input1) && isNaN(input2)) ||
+    (isNaN(input1) && isNaN(input2))
+  ) {
     alert("Please provide a valid number, not text!!!");
     return false;
   } else if (input1 < 0 || input2 < 0) {
@@ -49,17 +59,13 @@ function inputFieldValidation(input1, input2) {
   }
 }
 
-// functions for generate random  bg-color
-function generateRandomNumber(n) {
-  return Math.floor(Math.random() * n);
+// functions for generate random  rgb-color
+function generateRGBColor() {
+  const red = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  return `rgb(${red}, ${green}, ${blue})`;
 }
-
-btnColorChange.addEventListener("click", function () {
-  const r = generateRandomNumber(255);
-  const g = generateRandomNumber(255);
-  const b = generateRandomNumber(255);
-  // document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
 
 // fucntion for calculating area of triangle, rhombus and pentagon
 function areaCalculationWithHalf(p1, p2) {

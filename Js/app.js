@@ -12,18 +12,13 @@ document
     const triangleH = getInputFieldValueById("triangle-h");
     // get text elemenet of the title
     const triangleName = getTextElementValueById("triangle");
-
     //check input validation
     const isValid = inputFieldValidation(triangleB, triangleH);
     if (!isValid) {
-      console.log(!isValid + "Validation is not valid");
       return;
     }
-
     // area calculation
     const triangleArea = areaCalculationWithHalf(triangleB, triangleH);
-    console.log(triangleArea);
-
     // set the result to the result area
     setResult(triangleName, triangleArea);
   });
@@ -37,7 +32,6 @@ document
     const rectangleL = getInputFieldValueById("rectangle-l");
     // get text elemenet of the title
     const rectangleName = getTextElementValueById("rectangle");
-
     //check input validation
     const isValid = inputFieldValidation(rectangleW, rectangleL);
     if (!isValid) {
@@ -45,7 +39,6 @@ document
     }
     // area calculation
     const rectangleArea = areaCalculationWithTwoParam(rectangleW, rectangleL);
-
     // set the result to the result area
     setResult(rectangleName, rectangleArea);
   });
@@ -59,7 +52,6 @@ document
     const parallelogramL = getInputFieldValueById("parallelogram-h");
     // get text elemenet of the title
     const parallelogramName = getTextElementValueById("parallelogram");
-
     //check input validation
     const isValid = inputFieldValidation(parallelogramB, parallelogramL);
     if (!isValid) {
@@ -70,7 +62,6 @@ document
       parallelogramB,
       parallelogramL
     );
-
     // set the result to the result area
     setResult(parallelogramName, parallelogramArea);
   });
@@ -84,7 +75,6 @@ document
     const rhombusD2 = getInputFieldValueById("rhombus-d2");
     // get text elemenet of the title
     const rhombusName = getTextElementValueById("rhombus");
-
     //check input validation
     const isValid = inputFieldValidation(rhombusD1, rhombusD2);
     if (!isValid) {
@@ -92,7 +82,6 @@ document
     }
     // area calculation
     const rhombusArea = areaCalculationWithHalf(rhombusD1, rhombusD2);
-
     // set the result to the result area
     setResult(rhombusName, rhombusArea);
   });
@@ -106,7 +95,6 @@ document
     const pentagonB = getInputFieldValueById("pentagon-b");
     // get text elemenet of the title
     const pentagonName = getTextElementValueById("pentagon");
-
     //check input validation
     const isValid = inputFieldValidation(pentagonP, pentagonB);
     if (!isValid) {
@@ -114,11 +102,9 @@ document
     }
     // area calculation
     const pentagonArea = areaCalculationWithHalf(pentagonP, pentagonB);
-
     // set the result to the result area
     setResult(pentagonName, pentagonArea);
   });
-
 // event listeners to pentagon calculate button
 document
   .getElementById("calculate-ellipse")
@@ -128,7 +114,6 @@ document
     const ellipseB = getInputFieldValueById("ellipse-b");
     // get text elemenet of the title
     const ellipseName = getTextElementValueById("ellipse");
-
     //check input validation
     const isValid = inputFieldValidation(ellipseA, ellipseB);
     if (!isValid) {
@@ -136,7 +121,15 @@ document
     }
     // area calculation
     const ellipseArea = areaCalculationWithHalf(ellipseA, ellipseB);
-
     // set the result to the result area
     setResult(ellipseName, ellipseArea);
   });
+
+// set event listeners to generate random color on cards
+const cards = document.getElementsByClassName("cards-custom");
+for (const card of cards) {
+  card.addEventListener("mouseover", function () {
+    const bgColor = generateRGBColor();
+    card.style.backgroundColor = bgColor;
+  });
+}
