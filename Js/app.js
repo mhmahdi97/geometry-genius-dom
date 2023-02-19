@@ -126,10 +126,38 @@ document
   });
 
 // set event listeners to generate random color on cards
-const cards = document.getElementsByClassName("cards-custom");
-for (const card of cards) {
-  card.addEventListener("mouseover", function () {
-    const bgColor = generateRGBColor();
-    card.style.backgroundColor = bgColor;
-  });
-}
+// Card-1
+document.getElementById("card-1").addEventListener("mouseover", function () {
+  const bgColor = generateRGBColor();
+  document.getElementById("card-1").style.backgroundColor = bgColor;
+});
+
+// card-2
+document.getElementById("card-2").addEventListener("mouseover", function () {
+  const bgColor = generateRGBColor();
+  document.getElementById("card-2").style.backgroundColor = bgColor;
+});
+
+// card-3
+document.getElementById("card-3").addEventListener("mouseover", function () {
+  const bgColor = generateRGBColor();
+  document.getElementById("card-3").style.backgroundColor = bgColor;
+});
+
+// card-4
+document.getElementById("card-4").addEventListener("mouseover", function () {
+  const bgColor = generateRGBColor();
+  document.getElementById("card-4").style.backgroundColor = bgColor;
+});
+
+// card-5
+document.getElementById("card-5").addEventListener("mouseover", function () {
+  const bgColor = generateRGBColor();
+  document.getElementById("card-5").style.backgroundColor = bgColor;
+});
+
+// card-6
+document.getElementById("card-6").addEventListener("mouseover", function () {
+  const bgColor = generateRGBColor();
+  document.getElementById("card-6").style.backgroundColor = bgColor;
+});
