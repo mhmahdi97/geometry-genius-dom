@@ -2,7 +2,7 @@
 function getInputFieldValueById(inputFieldId) {
   const inputField = document.getElementById(inputFieldId);
   const inputFieldValueString = inputField.value;
-  if (inputFieldValueString === "" || inputFieldValueString === null) {
+  if (inputFieldValueString === "" || inputFieldValueString === "") {
     return "";
   }
   const inputFieldValue = parseFloat(inputFieldValueString);
@@ -33,7 +33,7 @@ function setResult(shapeName, shapeArea) {
   tableContainer.appendChild(tr);
 }
 
-// function for inpput field validation input validation
+// function for inpput field validation
 function inputFieldValidation(input1, input2) {
   if (input1 === "" || input2 === "") {
     alert("Please put an input then click!!!");
