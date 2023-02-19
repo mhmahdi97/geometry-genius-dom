@@ -8,22 +8,135 @@ document
   .getElementById("calculate-triangle")
   .addEventListener("click", function () {
     // get the data from input fields
-    const triangleBase = getInputFieldValueById("triangle-b");
-    const triangleHeight = getInputFieldValueById("triangle-h");
+    const triangleB = getInputFieldValueById("triangle-b");
+    const triangleH = getInputFieldValueById("triangle-h");
     // get text elemenet of the title
     const triangleName = getTextElementValueById("triangle");
 
     //check input validation
-    const isValid = inputFieldValidation(triangleBase, triangleHeight);
+    const isValid = inputFieldValidation(triangleB, triangleH);
     if (!isValid) {
       console.log(!isValid + "Validation is not valid");
       return;
     }
 
     // area calculation
-    const triangleArea = areaCalculationWithHalf(triangleBase, triangleHeight);
+    const triangleArea = areaCalculationWithHalf(triangleB, triangleH);
     console.log(triangleArea);
 
     // set the result to the result area
     setResult(triangleName, triangleArea);
+  });
+
+// event listeners to rectangle calculate button
+document
+  .getElementById("calculate-rectangle")
+  .addEventListener("click", function () {
+    // get the data from input fields
+    const rectangleW = getInputFieldValueById("rectangle-w");
+    const rectangleL = getInputFieldValueById("rectangle-l");
+    // get text elemenet of the title
+    const rectangleName = getTextElementValueById("rectangle");
+
+    //check input validation
+    const isValid = inputFieldValidation(rectangleW, rectangleL);
+    if (!isValid) {
+      return;
+    }
+    // area calculation
+    const rectangleArea = areaCalculationWithTwoParam(rectangleW, rectangleL);
+
+    // set the result to the result area
+    setResult(rectangleName, rectangleArea);
+  });
+
+// event listeners to parallelogram calculate button
+document
+  .getElementById("calculate-parallelogram")
+  .addEventListener("click", function () {
+    // get the data from input fields
+    const parallelogramB = getInputFieldValueById("parallelogram-b");
+    const parallelogramL = getInputFieldValueById("parallelogram-h");
+    // get text elemenet of the title
+    const parallelogramName = getTextElementValueById("parallelogram");
+
+    //check input validation
+    const isValid = inputFieldValidation(parallelogramB, parallelogramL);
+    if (!isValid) {
+      return;
+    }
+    // area calculation
+    const parallelogramArea = areaCalculationWithTwoParam(
+      parallelogramB,
+      parallelogramL
+    );
+
+    // set the result to the result area
+    setResult(parallelogramName, parallelogramArea);
+  });
+
+// event listeners to rhombus calculate button
+document
+  .getElementById("calculate-rhombus")
+  .addEventListener("click", function () {
+    // get the data from input fields
+    const rhombusD1 = getInputFieldValueById("rhombus-d1");
+    const rhombusD2 = getInputFieldValueById("rhombus-d2");
+    // get text elemenet of the title
+    const rhombusName = getTextElementValueById("rhombus");
+
+    //check input validation
+    const isValid = inputFieldValidation(rhombusD1, rhombusD2);
+    if (!isValid) {
+      return;
+    }
+    // area calculation
+    const rhombusArea = areaCalculationWithHalf(rhombusD1, rhombusD2);
+
+    // set the result to the result area
+    setResult(rhombusName, rhombusArea);
+  });
+
+// event listeners to pentagon calculate button
+document
+  .getElementById("calculate-pentagon")
+  .addEventListener("click", function () {
+    // get the data from input fields
+    const pentagonP = getInputFieldValueById("pentagon-p");
+    const pentagonB = getInputFieldValueById("pentagon-b");
+    // get text elemenet of the title
+    const pentagonName = getTextElementValueById("pentagon");
+
+    //check input validation
+    const isValid = inputFieldValidation(pentagonP, pentagonB);
+    if (!isValid) {
+      return;
+    }
+    // area calculation
+    const pentagonArea = areaCalculationWithHalf(pentagonP, pentagonB);
+
+    // set the result to the result area
+    setResult(pentagonName, pentagonArea);
+  });
+
+// event listeners to pentagon calculate button
+document
+  .getElementById("calculate-ellipse")
+  .addEventListener("click", function () {
+    // get the data from input fields
+    const ellipseA = getInputFieldValueById("ellipse-a");
+    const ellipseB = getInputFieldValueById("ellipse-b");
+    // get text elemenet of the title
+    const ellipseName = getTextElementValueById("ellipse");
+
+    //check input validation
+    const isValid = inputFieldValidation(ellipseA, ellipseB);
+    if (!isValid) {
+      return;
+    }
+    // area calculation
+    const ellipseArea = areaCalculationWithHalf(ellipseA, ellipseB);
+
+    // set the result to the result area
+    setResult(ellipseName, ellipseArea);
   });

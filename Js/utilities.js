@@ -33,23 +33,7 @@ function setResult(shapeName, shapeArea) {
   tableContainer.appendChild(tr);
 }
 
-// // function for inpput field validation
-// let checkValidation = true;
-// function inputfieldValidation(input1, input2) {
-//   if (isNaN(input1) || isNaN(input2)) {
-//     alert("Please provide a valid number!!!");
-//     checkValidation = false;
-//     return checkValidation;
-//   } else if (input1 < 0 || input2 < 0) {
-//     alert("Please provide a positive number!!!");
-//     checkValidation = false;
-//     return checkValidation;
-//   } else {
-//     return checkValidation;
-//   }
-// }
-
-// input validation
+// function for inpput field validation input validation
 function inputFieldValidation(input1, input2) {
   if (input1 === "" || input2 === "") {
     alert("Please put an input then click!!!");
@@ -65,6 +49,18 @@ function inputFieldValidation(input1, input2) {
   }
 }
 
+// functions for generate random  bg-color
+function generateRandomNumber(n) {
+  return Math.floor(Math.random() * n);
+}
+
+btnColorChange.addEventListener("click", function () {
+  const r = generateRandomNumber(255);
+  const g = generateRandomNumber(255);
+  const b = generateRandomNumber(255);
+  // document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+});
+
 // fucntion for calculating area of triangle, rhombus and pentagon
 function areaCalculationWithHalf(p1, p2) {
   const area = 0.5 * p1 * p2;
@@ -72,7 +68,7 @@ function areaCalculationWithHalf(p1, p2) {
 }
 
 // function for calculating rectangle area of rectangle and parallelogram
-function areaCalculatinWithTwoParam(p1, p2) {
+function areaCalculationWithTwoParam(p1, p2) {
   const area = p1 * p2;
   return area.toFixed(2);
 }
